@@ -2,9 +2,8 @@ import { defineAbilityFor } from '@saas/auth'
 import { randomUUID } from 'crypto'
 
 const ability = defineAbilityFor({
-  __typename: 'User',
   id: randomUUID(),
-  role: 'ADMIN',
+  role: 'MEMBER',
 })
 
 const userCanInviteSomeoneElse = ability.can('invite', 'User')
