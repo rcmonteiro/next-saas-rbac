@@ -62,6 +62,9 @@ importers:
       '@casl/ability':
         specifier: ^6.7.1
         version: 6.7.1
+      zod:
+        specifier: ^3.23.6
+        version: 3.23.6
     devDependencies:
       '@saas/eslint-config':
         specifier: workspace:*
@@ -1414,6 +1417,9 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  zod@3.23.6:
+    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
 
 snapshots:
 
@@ -2903,3 +2909,5 @@ snapshots:
   yallist@4.0.0: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.23.6: {}

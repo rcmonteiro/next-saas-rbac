@@ -10,9 +10,10 @@
 - configurando o ./config/tsconfig
 - criando o pacote ./package/auth, que será usado tanto pelo front como pelo back
 - `pnpm i @casl/ability`
-- criando o app . /apps/api
-- `pnpm i -D tsx @types/node`
+- criando o app ./apps/api
+- ./apps/api `pnpm i -D tsx @types/node`
 - configurando as permissões 
+- ./package/auth: `pnpn i zod`
 
 
 ### Single Tenant vs Multi Tenant
