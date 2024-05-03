@@ -9,6 +9,10 @@
 - ./config/eslint-config: `pnpm i -D @rocketseat/eslint-config eslint-plugin-simple-import-sort`
 - configurando o ./config/tsconfig
 - criando o pacote ./package/auth, que será usado tanto pelo front como pelo back
+- `pnpm i @casl/ability`
+- criando o app . /apps/api
+- `pnpm i -D tsx @types/node`
+- configurando as permissões 
 
 
 ### Single Tenant vs Multi Tenant
