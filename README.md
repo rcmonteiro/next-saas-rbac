@@ -1,81 +1,43 @@
-# Turborepo starter
+# Project History
 
-This is an official starter Turborepo.
+- `pnpm dlx create-turbo@latest`
+- criando a pasta config com eslint e typescript
+- `pnpm i`
+- configurando o ./config/prettier - criando o pacote e instalando as dependências
+- /config/prettier: `pnpm i -D prettier prettier-plugin-tailwindcss`
+- configurando o ./config/eslint-config
+- ./config/eslint-config: `pnpm i -D @rocketseat/eslint-config eslint-plugin-simple-import-sort`
+- configurando o ./config/tsconfig
+- criando o pacote ./package/auth, que será usado tanto pelo front como pelo back
 
-## Using this example
 
-Run the following command:
+### Single Tenant vs Multi Tenant
 
-```sh
-npx create-turbo@latest
-```
+**Single Tenant**
+- Um software utilizado por uma empresa, **_uma única instância_** do software utilizado por uma **_única empresa_**
+- Se mais empresas forem usar o software, ele precisa ser instalado manualmente do sistema (ex: Java/Delphi)
+- Você tem uma infraestrutura para cada cliente, para cada instância do software
 
-## What's inside?
+**Multi Tenant**
+- Um software que é utilizado por várias empresas compartilhando de uma mesma infraestrutura (rodando na "nuvem")
+- Não quer dizer que TEMOS que usar vários subdomínios (empresa1.app.com, empresa2.app.com), isso é mais utilizado para soluções que servem páginas públicas para as empresas que contratam o SaaS.
+- A grande maioria dos SaaS que são Multi Tenant **_não usam_** um banco por empresa, isso acaba sendo exigido em situações de negócio e não técnicas, como em casos de b2gov ou em contratos com grandes empresas por conta da **LGPD**
+****
 
-This Turborepo includes the following packages/apps:
 
-### Apps and Packages
+### Autorização
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+**RBAC**
+- Role Based Authorization Control
+- Role: Admin, Billing, Developer, Member
+- A grande maioria das aplicações seguem este padrão
+- Controle mais alto nível
+- Para a grande maioria, a criação de novas roles não deveria ser uma opção aberta aos usuários
+  - Com isso, não precisamos ter as Roles no banco, mas na própria codebase
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+**ABAC**
+- Attribute Based Authorization Control
+- Controle mais baixo nível
+- Admin: pode editar um projeto
+- Membro: pode editar o título de um projeto
+- Podemos e acabamos usando um pouco de ambos os padrões, conforme a necessidade do projeto
