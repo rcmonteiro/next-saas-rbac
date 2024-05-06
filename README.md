@@ -15,10 +15,13 @@
 - configurando as permissões 
 - ./package/auth: `pnpn i zod`
 - configurando o fastify
-- ./apps/api: `pnpm i fastify fastify-type-provider-zod @fastify/cors zod`
+- ./apps/api: `pnpm i fastify fastify-type-provider-zod @fastify/cors zod bcrypt-js`
 - configurando o prisma + docker compose
 - ./apps/api: `pnpm i prisma`
 - ./apps/api: `pnpm prisma init`
+- criando o seed para o banco ter dados para testes
+- ./apps/api: `pnpm i -D @faker-js/faker`
+- ./apps/api:
 
 ### Single Tenant vs Multi Tenant
 

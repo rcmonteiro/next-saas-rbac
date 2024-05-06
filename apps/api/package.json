@@ -6,7 +6,11 @@
   "scripts": {
     "start:dev": "tsx watch src/http/server.ts"
   },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@saas/eslint-config": "workspace:*",
     "@saas/prettier": "workspace:*",
     "@saas/tsconfig": "workspace:*",
