@@ -21,7 +21,9 @@
 - ./apps/api: `pnpm prisma init`
 - criando o seed para o banco ter dados para testes
 - ./apps/api: `pnpm i -D @faker-js/faker`
-- ./apps/api:
+- ./apps/api: `pnpm prisma db seed`
+- configurando o swagger
+- ./apps/api: `pnpm i @fastify/swagger @fastify/swagger-ui`
 
 ### Single Tenant vs Multi Tenant
 
@@ -65,7 +67,7 @@ This project contains all the necessary boilerplate to setup a multi-tenant SaaS
 - [ ] It should be able to authenticate using e-mail & password;
 - [ ] It should be able to authenticate using Github account;
 - [ ] It should be able to recover password using e-mail;
-- [ ] It should be able to create an account (e-mail, name and password);
+- [x] It should be able to create an account (e-mail, name and password);
 
 ### Organizations
 

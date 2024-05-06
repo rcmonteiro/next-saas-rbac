@@ -10,6 +10,8 @@ export const createAccount = async (app: FastifyInstance) => {
     '/users',
     {
       schema: {
+        tags: ['Auth'],
+        summary: 'Create a new account',
         body: z.object({
           name: z.string(),
           email: z.string().email(),
@@ -30,6 +32,12 @@ export const createAccount = async (app: FastifyInstance) => {
         })
       }
 
+      const [, domain] = email.split('@')
+
+      const autoJoinOrganization = await db.organization.findFirst({
+        where: { domain, shouldAttachUsersByDomain: true },
+      })
+
       const hashedPassword = await hash(password, 6)
 
       await db.user.create({
@@ -37,6 +45,13 @@ export const createAccount = async (app: FastifyInstance) => {
           name,
           email,
           passwordHash: hashedPassword,
+          member_on: autoJoinOrganization
+            ? {
+                create: {
+                  organizationId: autoJoinOrganization.id,
+                },
+              }
+            : undefined,
         },
       })
 
