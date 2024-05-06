@@ -15,7 +15,7 @@
 - configurando as permissões 
 - ./package/auth: `pnpn i zod`
 - configurando o fastify
-- ./apps/api: `pnpm i fastify fastify-type-provider-zod @fastify/cors zod bcrypt-js`
+- ./apps/api: `pnpm i fastify fastify-type-provider-zod @fastify/cors zod bcrypt-js @fastify/jwt`
 - configurando o prisma + docker compose
 - ./apps/api: `pnpm i prisma`
 - ./apps/api: `pnpm prisma init`
