@@ -5,7 +5,7 @@ import z from 'zod'
 import { auth } from '@/http/middleware/auth'
 import { db } from '@/lib/prisma'
 
-import { BadRequestError } from '../_errors/bad-request-errors'
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export const getProfile = async (app: FastifyInstance) => {
   app
@@ -17,6 +17,7 @@ export const getProfile = async (app: FastifyInstance) => {
         schema: {
           tags: ['Auth'],
           summary: 'Get authenticated profile',
+          security: [{ bearerAuth: [] }],
           response: {
             200: z.object({
               user: z.object({

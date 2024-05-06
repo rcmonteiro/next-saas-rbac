@@ -5,7 +5,7 @@ import { z } from 'zod'
 
 import { db } from '@/lib/prisma'
 
-import { BadRequestError } from '../_errors/bad-request-errors'
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export const authenticateWithPassword = async (app: FastifyInstance) => {
   app.withTypeProvider<ZodTypeProvider>().post(
