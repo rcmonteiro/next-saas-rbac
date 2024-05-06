@@ -4,7 +4,7 @@
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-    "start:dev": "tsx watch src/index.ts"
+    "start:dev": "tsx watch src/http/server.ts"
   },
   "devDependencies": {
     "@saas/eslint-config": "workspace:*",
@@ -14,7 +14,11 @@
     "tsx": "^4.9.0"
   },
   "dependencies": {
-    "@saas/auth": "workspace:*"
+    "@fastify/cors": "^9.0.1",
+    "@saas/auth": "workspace:*",
+    "fastify": "^4.26.2",
+    "fastify-type-provider-zod": "^1.1.9",
+    "zod": "^3.23.6"
   },
   "prettier": "@saas/prettier",
   "eslintConfig": {
