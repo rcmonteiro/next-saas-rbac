@@ -16,7 +16,9 @@
 - ./package/auth: `pnpn i zod`
 - configurando o fastify
 - ./apps/api: `pnpm i fastify fastify-type-provider-zod @fastify/cors zod`
-
+- configurando o prisma + docker compose
+- ./apps/api: `pnpm i prisma`
+- ./apps/api: `pnpm prisma init`
 
 ### Single Tenant vs Multi Tenant
 
