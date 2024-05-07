@@ -7,6 +7,7 @@
     "start:dev": "pnpm env:load tsx watch src/http/server.ts",
     "db:migrate": "pnpm env:load prisma migrate dev",
     "db:studio": "pnpm env:load prisma studio",
+    "db:seed": "pnpm env:load prisma db seed",
     "env:load": "dotenv -e ../../.env --"
   },
   "prisma": {
