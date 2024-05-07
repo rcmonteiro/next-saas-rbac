@@ -42,14 +42,22 @@ export const resetPassword = async (app: FastifyInstance) => {
 
         const hashedPassword = await hash(password, 6)
 
-        await db.user.update({
-          data: {
-            passwordHash: hashedPassword,
-          },
-          where: {
-            id: tokenFromCode.userId,
-          },
-        })
+        await db.$transaction([
+          db.user.update({
+            data: {
+              passwordHash: hashedPassword,
+            },
+            where: {
+              id: tokenFromCode.userId,
+            },
+          }),
+
+          db.token.delete({
+            where: {
+              id: code,
+            },
+          }),
+        ])
 
         return reply.status(204).send()
       },
