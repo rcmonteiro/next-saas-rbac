@@ -10,7 +10,7 @@
   "devDependencies": {
     "turbo": "latest"
   },
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.1.1",
   "engines": {
     "node": ">=18"
   },
