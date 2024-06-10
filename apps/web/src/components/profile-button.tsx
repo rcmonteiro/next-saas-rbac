@@ -31,7 +31,7 @@ export const ProfileButton = async () => {
             {user.email}
           </span>
         </div>
-        <Avatar>
+        <Avatar className="size-8">
           {user.avatarUrl && <AvatarImage src={user.avatarUrl} />}
           <AvatarFallback className="bg-emerald-600 text-white">
             {getInitials(user.name)}
@@ -39,7 +39,7 @@ export const ProfileButton = async () => {
         </Avatar>
         <ChevronDown className="size-4 text-muted-foreground" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent align="end">
         <DropdownMenuItem asChild>
           <a href="/api/auth/sign-out" className="cursor-pointer">
             <LogOut className="mr-2 size-4" />
